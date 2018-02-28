@@ -12,7 +12,7 @@ exports.author_list = function (req, res, next) {
         .sort([['family_name', 'ascending']])
         .exec(function (err, list_authors) {
             if (err) { return next(err); }
-            // Successful, so render.
+            // Suwillnotification issue ccessful, so render.
             res.render('author_list', { title: 'Author List', author_list: list_authors });
         })
 
@@ -20,7 +20,7 @@ exports.author_list = function (req, res, next) {
 
 // Display detail page for a specific Author.
 exports.author_detail = function (req, res, next) {
-
+console.log('P1');
     async.parallel({
         author: function (callback) {
             Author.findById(req.params.id)
@@ -162,7 +162,6 @@ exports.author_update_get = function (req, res, next) {
         }
         // Success.
         res.render('author_form', { title: 'Update Author', author: author });
-
     });
 };
 

@@ -4,7 +4,7 @@ console.log('This script populates some test books, authors, genres and bookinst
 
 // Get arguments passed on command line
 var userArgs = process.argv.slice(2);
-if (!userArgs[0].startsWith('mongodb://')) {
+if (!userArgs[0].startsWith('mongodb://dbuser:dbpass@ds147118.mlab.com:47118/local_library')) {
     console.log('ERROR: You need to specify a valid mongodb URL as the first argument');
     return
 }
@@ -14,7 +14,7 @@ var Book = require('./models/book')
 var Author = require('./models/author')
 var Genre = require('./models/genre')
 var BookInstance = require('./models/bookinstance')
-
+var User = require('./models/user')
 
 var mongoose = require('mongoose');
 var mongoDB = userArgs[0];

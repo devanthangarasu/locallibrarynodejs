@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+  h1 User: #{user.name}
+  p #{user.username}
+
+  div(style='margin-left:20px;margin-top:20px')
+
+    h4 Other details
+    p #{user.email}
+
+
+  hr
+  p
+    a(href=user.url+'/update') Update User
